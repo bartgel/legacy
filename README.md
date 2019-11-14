@@ -19,7 +19,7 @@ We use the following structure in all projects:
 
   + [doc](doc/README.md): documentation
 
-  + [init](init/README.md): installation scripts
+  + [install_dependencies_ubuntu.sh](install_dependencies_ubuntu.sh): dependencies for ubuntu
   
   + [build.sh](build.sh): Basic build script
 
@@ -47,4 +47,26 @@ Company "Hello World Inc" is created by Mr James Hello and Martin World.
 Make a lot of money selling hello world applications to companies everywhere.
 
 Branch LEGACY/VERSION-0.0.0 is the original version of the hello world application.
+
+
+# General installation instructions
+
+## Installing needed dependencies in ubuntu
+
+```bash
+./install_dependencies_ubuntu.sh
+```
+
+## Building this code
+
+
+```bash
+./build.sh
+```
+
+## Running this code
+
+```bash
+./run.sh
+```
 
