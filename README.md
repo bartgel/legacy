@@ -2,9 +2,11 @@
 
 ## What
 
-[https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/](Credits go to this blog post by James Fisher)
 
-[doc/original_post.md](A local copy of this blogpost can be found here)
+[Credits go to this blog post by James Fisher](https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/)
+
+
+[A local copy of this blogpost can be found here](doc/original_post.md)
 
 This represents the first version of the Hello World application
 
