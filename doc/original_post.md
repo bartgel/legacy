@@ -2,7 +2,7 @@
 
 ## What
 
-[https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/](Original code by James Fisher)
+[Original code by James Fisher] (https://jameshfisher.com/2018/03/10/linux-assembly-hello-world/)
 
 This represents the first version of the Hello World application
 
@@ -60,14 +60,15 @@ $ ./hello
 Hello, world!
 ```
 
-The first important document is the [https://github.com/hjl-tools/x86-psABI/wiki/X86-psABI](x86-64 ABI specification), maintained by Intel. (Weirdly, the official location for the ABI specification is some random dude’s personal GitHub account. Welcome to the sketchy world of assembly.) The ABI specification describes system calls in the abstract, as it applies to any operating system. Importantly:
+The first important document is the [x86-64 ABI specification](https://github.com/hjl-tools/x86-psABI/wiki/X86-psABI)
+, maintained by Intel. (Weirdly, the official location for the ABI specification is some random dude’s personal GitHub account. Welcome to the sketchy world of assembly.) The ABI specification describes system calls in the abstract, as it applies to any operating system. Importantly:
 
 - The system call number is put in rax.
 - Arguments are put in the registers rdi, rsi, rdx, rcx, r8 and r9, in that order.
 - The system is called with the syscall instruction.
 - The return value of the system call is in rax. An error is signalled by returning -errno.
 
-The second document is the [https://github.com/torvalds/linux/blob/master/arch/x86/entry/syscalls/syscall_64.tbl](Linux 64-bit system call table). This specifies the system call number for each Linux system call. For our example, the write system call is 1 and exit is 60.
+The second document is the [Linux 64-bit system call table](https://github.com/torvalds/linux/blob/master/arch/x86/entry/syscalls/syscall_64.tbl). This specifies the system call number for each Linux system call. For our example, the write system call is 1 and exit is 60.
 
 Finally, you want the man pages for the system calls, which tell you their signature, e.g.:
 
