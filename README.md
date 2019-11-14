@@ -22,6 +22,8 @@ We use the following structure in all projects:
   + [init](init/README.md): installation scripts
   
   + [build.sh](build.sh): Basic build script
+
+  + [run.sh](run.sh): Run what is build
    
   + README.md basic readme file gives more information about this branch
 
