@@ -1,1 +1,1 @@
-echo nothing to run
+target/hello
