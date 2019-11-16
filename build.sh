@@ -1,1 +1,3 @@
-echo nothing to build here
+rm -rf target
+mkdir target
+gcc src/hello.c -o target/hello
