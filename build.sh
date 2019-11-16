@@ -1,3 +1,3 @@
 rm -rf target
 mkdir target
-gcc src/hello.c -o target/hello
+gcc src/hello.c src/signs.c -o target/hello
