@@ -1,46 +1,46 @@
-#include <stdio.h>
+#include "helper.h"
 
 void explanation_lowercase() {
-	printf("!");
+	print('!',0);
 }
 
 void comma_lowercase(void) {
-	printf(",");
+	print(',',0);
 }
 
 void space_lowercase(void) {
-	printf(" ");
+	print(' ',0);
 }
 
 void cr_lowercase(void) {
-	printf("\n");
+	print('\n',0);
 }
 
 void h_uppercase(void) {
-	printf("H");
+	print('h',1);
 }
 
 void e_lowercase(void) {
-	printf("e");
+	print('e',0);
 }
 
 void l_lowercase(void) {
-	printf("l");
+	print('l',0);
 }
 
 void o_lowercase(void) {
-	printf("o");
+	print('o',0);
 }
 
 void w_lowercase(void) {
-	printf("w");
+	print('w',0);
 }
 
 void d_lowercase(void) {
-	printf("d");
+	print('d',0);
 }
 
 void r_lowercase(void) {
-	printf("r");
+	print('r',0);
 }
 
