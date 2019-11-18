@@ -1,19 +1,17 @@
 #include "signs.h"
 
 int main(void) {
-	explanation_lowercase();
-	h_uppercase();
-	e_lowercase();
-	l_lowercase();
-	l_lowercase();
-	o_lowercase();
-	comma_lowercase();
-	space_lowercase();
-	w_lowercase();
-	o_lowercase();
-	r_lowercase();
-	l_lowercase();
-	d_lowercase();
-	explanation_lowercase();
-	cr_lowercase();
+	exm(0);
+	h(1);
+	e(0);
+	for (int i =0; i <2; i++) l(0);
+	o(0);
+	spa(0);
+	w(0);
+	o(0);
+	r(0);
+	l(0);
+	d(0);
+	exm(0);
+	cr(0);
 }

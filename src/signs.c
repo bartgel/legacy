@@ -1,46 +1,46 @@
 #include "helper.h"
 
-void explanation_lowercase() {
-	print('!',0);
+void exm(int uppercase) {
+	print('!',uppercase);
 }
 
-void comma_lowercase(void) {
-	print(',',0);
+void com(int uppercase) {
+	print(',',uppercase);
 }
 
-void space_lowercase(void) {
-	print(' ',0);
+void spa(int uppercase) {
+	print(' ',uppercase);
 }
 
-void cr_lowercase(void) {
-	print('\n',0);
+void cr(int uppercase) {
+	print('\n',uppercase);
 }
 
-void h_uppercase(void) {
-	print('h',1);
+void h(int uppercase) {
+	print('h',uppercase);
 }
 
-void e_lowercase(void) {
-	print('e',0);
+void e(int uppercase) {
+	print('e',uppercase);
 }
 
-void l_lowercase(void) {
-	print('l',0);
+void l(int uppercase) {
+	print('l',uppercase);
 }
 
-void o_lowercase(void) {
-	print('o',0);
+void o(int uppercase) {
+	print('o',uppercase);
 }
 
-void w_lowercase(void) {
-	print('w',0);
+void w(int uppercase) {
+	print('w',uppercase);
 }
 
-void d_lowercase(void) {
-	print('d',0);
+void d(int uppercase) {
+	print('d',uppercase);
 }
 
-void r_lowercase(void) {
-	print('r',0);
+void r(int uppercase) {
+	print('r',uppercase);
 }
 
