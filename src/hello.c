@@ -50,7 +50,7 @@ void route(char* filename)
     {
 	FILE* fp = fopen(filename,"r");
 	char buff[255];
-        printf("HTTP/1.1 200 OK\r\nContent-Type: text/text\r\n\r\n");
+        printf("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n");
 	if (fp != 0) {
 		memset(buff, 0, sizeof(buff));
 		fgets(buff,sizeof(buff) -1,fp);
@@ -62,12 +62,12 @@ void route(char* filename)
 
     }
 
-    ROUTE_POST("/")
+    /*ROUTE_POST("/")
     {
         printf("HTTP/1.1 200 OK\r\n\r\n");
         printf("Wow, seems that you POSTed %d bytes. \r\n", payload_size);
         printf("Fetch the data using `payload` variable.");
-    }
+    }*/
   
     ROUTE_END()
 }
