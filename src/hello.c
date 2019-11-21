@@ -62,6 +62,30 @@ int readHelloWorld(char* filename) {
     return 0;
 }
 
+int readHtml(char* htmlFilename, char* helloFilename) {
+    FILE * fp;
+    char * line = NULL;
+    size_t len = 0;
+    ssize_t read;
+
+    fp = fopen(htmlFilename, "r");
+    if (fp == NULL) return -1;
+
+    while ((read = getline(&line, &len, fp)) != -1) {
+	    if (strstr(line, "{=showHelloWorld}") != 0) {
+		    if (readHelloWorld(helloFilename) != 0) default_hello();
+	    } else {
+        	printf("%s", line);
+	    }
+    }
+
+    fclose(fp);
+    if (line)
+        free(line);
+    return 0;
+
+}
+
 
 
 void route(char* filename)
@@ -72,10 +96,8 @@ void route(char* filename)
     {
 	FILE* fp = fopen(filename,"r");
 	char buff[255];
-        printf("HTTP/1.1 200 OK\rcontent-type: text/plain\r\n\r\n");
-	if (readHelloWorld(filename) != 0) {
-		default_hello();
-	}
+        printf("HTTP/1.1 200 OK\rcontent-type: text/html\r\n\r\n");
+	readHtml("conf/template.html",filename);
 
     }
 
