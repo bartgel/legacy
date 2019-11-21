@@ -2,6 +2,7 @@
 #include "httpd.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int default_hello(void) {
 	exm(0);
@@ -42,6 +43,27 @@ int main(int argnum, char** args)
     return 0;
 }
 
+int readHelloWorld(char* filename) {
+    FILE * fp;
+    char * line = NULL;
+    size_t len = 0;
+    ssize_t read;
+
+    fp = fopen(filename, "r");
+    if (fp == NULL) return -1;
+
+    while ((read = getline(&line, &len, fp)) != -1) {
+        printf("%s", line);
+    }
+
+    fclose(fp);
+    if (line)
+        free(line);
+    return 0;
+}
+
+
+
 void route(char* filename)
 {
     ROUTE_START()
@@ -50,15 +72,10 @@ void route(char* filename)
     {
 	FILE* fp = fopen(filename,"r");
 	char buff[255];
-        printf("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n");
-	if (fp != 0) {
-		memset(buff, 0, sizeof(buff));
-		fgets(buff,sizeof(buff) -1,fp);
-		printf("%s",buff);
-		fclose(fp);
-		return;
+        printf("HTTP/1.1 200 OK\rcontent-type: text/plain\r\n\r\n");
+	if (readHelloWorld(filename) != 0) {
+		default_hello();
 	}
-	default_hello();
 
     }
 
