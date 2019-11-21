@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int argnum;
-char** args;
 int default_hello(void) {
 	exm(0);
 	h(1);
@@ -28,26 +26,31 @@ char* getFileName(char* filename, size_t fileSize, int argnum, char** args) {
 	return filename;
 }
 
+char* getPort(char* port, size_t portSize, int argnum, char** args) {
+	memset(port,0,portSize);
+	strncpy(port, argnum < 3 ? "8080": args[2], portSize -1);
+	return port;
+}
 
-
-int main(int c, char** v)
+int main(int argnum, char** args)
 {
-	argnum = c;
-	args=v;
-    serve_forever("8080");
+	char filename[300];
+	char port[10];
+	getFileName(filename,sizeof(filename),argnum,args);
+	getPort(port,sizeof(port),argnum,args);
+    serve_forever(port,filename);
     return 0;
 }
 
-void route()
+void route(char* filename)
 {
     ROUTE_START()
 
     ROUTE_GET("/")
     {
-	char filename[300];
-	FILE* fp = fopen(getFileName(filename,sizeof(filename),argnum,args),"r");
+	FILE* fp = fopen(filename,"r");
 	char buff[255];
-        printf("HTTP/1.1 200 OK\r\n\r\n");
+        printf("HTTP/1.1 200 OK\r\nContent-Type: text/text\r\n\r\n");
 	if (fp != 0) {
 		memset(buff, 0, sizeof(buff));
 		fgets(buff,sizeof(buff) -1,fp);

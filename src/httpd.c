@@ -17,7 +17,7 @@
 static int listenfd, clients[CONNMAX];
 static void error(char *);
 static void startServer(const char *);
-static void respond(int);
+static void respond(int,const char*);
 
 typedef struct { char *name, *value; } header_t;
 static header_t reqhdr[17] = { {"\0", "\0"} };
@@ -25,7 +25,7 @@ static int clientfd;
 
 static char *buf;
 
-void serve_forever(const char *PORT)
+void serve_forever(const char *PORT, const char* filename)
 {
     struct sockaddr_in clientaddr;
     socklen_t addrlen;
@@ -61,7 +61,7 @@ void serve_forever(const char *PORT)
         {
             if ( fork()==0 )
             {
-                respond(slot);
+                respond(slot,filename);
                 exit(0);
             }
         }
@@ -123,7 +123,7 @@ char *request_header(const char* name)
 }
 
 //client connection
-void respond(int n)
+void respond(int n, const char* filename)
 {
     int rcvd, fd, bytes_read;
     char *ptr;
@@ -176,7 +176,7 @@ void respond(int n)
         close(clientfd);
 
         // call router
-        route();
+        route(filename);
 
         // tidy up
         fflush(stdout);

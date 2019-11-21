@@ -6,7 +6,7 @@
 
 //Server control functions
 
-void serve_forever(const char *PORT);
+void serve_forever(const char *PORT, const char *filename);
 
 // Client request
 
