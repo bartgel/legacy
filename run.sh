@@ -1,1 +1,1 @@
-echo nothing to run
+node ./src/app.js
