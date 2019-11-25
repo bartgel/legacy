@@ -1,0 +1,28 @@
+{
+  "name": "legacy",
+  "version": "2.0.0",
+  "description": "Default legacy app",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bartgel/legacy.git"
+  },
+  "author": "Bart Geluykens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bartgel/legacy/issues"
+  },
+  "homepage": "https://github.com/bartgel/legacy#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "i18n": "^0.8.4",
+    "i18n-express": "^1.1.3"
+  }
+}

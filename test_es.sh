@@ -1,0 +1,1 @@
+curl http://localhost:3000/ -H Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3" -H "Accept-Encoding: gzip, deflate, br" -H "Accept-Language: es" --compressed
